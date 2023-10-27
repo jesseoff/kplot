@@ -95,14 +95,9 @@ struct	kplotdat {
 	double		  sum; /* used for KSMOOTH_CDF */
 };
 
-struct	kplot {
-	struct kplotdat	*datas; /* data sets per plot */
-	size_t		 datasz; /* number of data sets */
-	struct kplotcfg	 cfg; /* configuration */
-};
-
 struct	kplotctx {
 	cairo_t		*cr; /* cairo context */
+	cairo_pattern_t *axes;
 	double		 h; /* height of context */
 	double		 w; /* width of context */
 	struct kpair	 minv; /* minimum data point values */
@@ -119,6 +114,14 @@ struct	kplotctx {
 	struct kpair	 offs;
 	struct kpair	 dims;
 };
+
+struct	kplot {
+	struct kplotdat	*datas; /* data sets per plot */
+	size_t		 datasz; /* number of data sets */
+	struct kplotcfg	 cfg; /* configuration */
+	struct kplotctx  ctx;
+};
+
 
 __BEGIN_DECLS
 

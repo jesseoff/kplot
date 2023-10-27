@@ -234,6 +234,7 @@ int		 kplot_attach_smooth(struct kplot *, struct kdata *,
 int		 kplot_attach_datas(struct kplot *, size_t, 
 			struct kdata **, const enum kplottype *, 
 			const struct kdatacfg *const *, enum kplotstype);
+void		 kplot_redraw(struct kplot *);
 void		 kplot_draw(struct kplot *, double, double, cairo_t *);
 void		 kplot_free(struct kplot *);
 int		 kplot_get_datacfg(struct kplot *, size_t,
